@@ -38,6 +38,9 @@ class Calc
         if (num1 > 10 || num2 > 10) {
             throw new Exception("Числа должны быть меньше 10!");
         }
+        if (num1 < 1 || num2 < 1) {
+            throw new Exception("Числа должны быть больше 0!");
+        }
         int arabian = calc(num1, num2, oper);
         if (isRoman)
         {
@@ -80,10 +83,15 @@ class Calc
 
     class Roman
     {
-        static String[] romanArray = new String[]{"0","I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII",
-                "XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI","XXIV","XXV","XXVII","XXVIII","XXX","XXX","XXXII",
-                "XXXV","XXXVI","XL","XLII","XLV","XLVIII","XLIX","L","LIV","LVI","LX","LXIII","LXIV","LXX","LXXII",
-                "LXXX","LXXXI","XC","C"};
+        static String[] romanArray = new String[]{"O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
+                "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX", "XXI", "XXII", "XXIII", "XXIV",
+                "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI",
+                "XXXVII", "XXXVIII", "XXXIX", "XL", "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII",
+                "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX", "LX",
+                "LXI", "LXII", "LXIII", "LXIV", "LXV", "LXVI", "LXVII", "LXVIII", "LXIX", "LXX",
+                "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX",
+                "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC",
+                "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C"};
 
         public static  boolean isRoman(String val)
         {
